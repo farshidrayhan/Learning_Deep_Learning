@@ -1,3 +1,5 @@
 {
-  "recommender_wide_and_deep.py": true
+  "recommender_wide_and_deep.py::test_deep": true,
+  "recommender_wide_and_deep.py::test_wide": true,
+  "recommender_wide_and_deep.py::test_wide_and_deep": true
 }
