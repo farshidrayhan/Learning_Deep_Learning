@@ -29,8 +29,8 @@ network = local_response_normalization(network)
 network = conv_2d(network, 64, 3, activation='relu', regularizer="L2")
 network = max_pool_2d(network, 2)
 network = local_response_normalization(network)
-network = fully_connected(network, 128, activation='tanh')
-network = dropout(network, 0.8)
+# network = fully_connected(network, 128, activation='tanh')
+# network = dropout(network, 0.8)
 network = fully_connected(network, 256, activation='tanh')
 network = dropout(network, 0.8)
 network = fully_connected(network, 10, activation='softmax')
@@ -39,6 +39,6 @@ network = regression(network, optimizer='adam', learning_rate=0.01,
 
 # Training
 model = tflearn.DNN(network, tensorboard_verbose=0)
-model.fit({'input': X}, {'target': Y}, n_epoch=20,
+model.fit({'input': X}, {'target': Y}, n_epoch=2,
            validation_set=({'input': testX}, {'target': testY}),
            snapshot_step=100, show_metric=True, run_id='convnet_mnist')
